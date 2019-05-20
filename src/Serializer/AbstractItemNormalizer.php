@@ -100,7 +100,7 @@ abstract class AbstractItemNormalizer extends AbstractObjectNormalizer
         $context['api_normalize'] = true;
 
         if (isset($context['resources'])) {
-            $resource = $context['iri'] ?? $this->iriConverter->getIriFromItem($object);
+            $resource =  spl_object_hash($object);
             $context['resources'][$resource] = $resource;
         }
 
